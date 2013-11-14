@@ -1,23 +1,72 @@
-.track {
+body, button {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.slider {
 	width: 480px;
-	background: #ccc;
-	height: 15px;
+	float: left;
+}
+
+.preview {
+	float: left;
+	margin-left: 20px;
+	width: 250px;
+}
+
+th {
+	vertical-align: top;
+	font-weight: bold;
+}
+
+td {
+	border-bottom: 2px solid #ccc;
+	padding: 10px;
+}
+
+td.time {
+	width: 800px;
+}
+
+.Time {
+	padding: 10px;
 	position: relative;
+	background: #eee;
+	margin: 5px 0;
 }
 
-.indicator {
-	height: 20px;
-	width: 10px;
+.comment {
+	clear: both;
+	width: 745px;
+	font-size: 14px;
+	padding: 2px;
+	margin-top: 5px;
+}
+
+.clear {
 	position: absolute;
-	z-index: 1;
-	border-radius: 5px;
+	right: 0;
 	top: -2px;
+	bottom: -2px;
+	background: #c0392b;
+	width: 30px;
+	border: 0;
+	color: white;
+	opacity: 0.7;
 }
 
-.startIndicator {
-	background: blue;
+#slots .slider {
+	border-radius: 0;
 }
 
-.endIndicator {
-	background: red;
+.clear:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.main-button {
+	background: #27ae60;
+	border: 0;
+	color: white;
+	padding: 5px 10px;
+	font-size: 14px;
 }

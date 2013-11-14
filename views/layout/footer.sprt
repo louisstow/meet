@@ -1,3 +1,7 @@
 <script src="/public/src/Slots.js"></script>
+<script src="/public/src/Event.js"></script>
+<script src="/public/src/Row.js"></script>
+<script src="/public/src/Time.js"></script>
+{{ asset /public/$(page).js }}
 </body>
 </html>

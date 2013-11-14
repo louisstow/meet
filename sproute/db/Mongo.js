@@ -61,9 +61,7 @@ var Mongo = Interface.extend({
 	},
 
 	read: function (table, conditions, options, next) {
-		if (conditions._id) {
-			conditions._id = new mongo.ObjectID(conditions._id)
-		}
+		convertObjectId(conditions);
 
 		if (options['in']) {
 			var inOpts = options['in'];

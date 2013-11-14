@@ -1,5 +1,6 @@
 {
 	"/": "home",
+	"/event": "event",
 	"/event/:id": "event",
-	"/:profile": "profile"	
+	"/:profile": "home"	
 }

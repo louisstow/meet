@@ -381,6 +381,11 @@ var View = Event.extend({
 		if (!this.container) {
 			var container = document.createElement("div");
 			container.setAttribute("class", "container");
+			
+			if (this.tag) {
+				container.classList.add(this.tag)
+			}
+
 			this.container = container;
 		}
 

@@ -1,2 +1,12 @@
 {{ include layout/header.sprt }}
+
+<div id="events">
+<p>Add the IDs of participants timeslots.</p>
+<input type="text" name="profile" /><button name="include-button">Include</button>
+
+<table id="table">
+</table>
+</div>
+
+{{ set page events }}
 {{ include layout/footer.sprt }}
