@@ -1,0 +1,2 @@
+{{ include layout/header.sprt }}
+{{ include layout/footer.sprt }}

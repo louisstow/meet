@@ -1,0 +1,23 @@
+.track {
+	width: 480px;
+	background: #ccc;
+	height: 15px;
+	position: relative;
+}
+
+.indicator {
+	height: 20px;
+	width: 10px;
+	position: absolute;
+	z-index: 1;
+	border-radius: 5px;
+	top: -2px;
+}
+
+.startIndicator {
+	background: blue;
+}
+
+.endIndicator {
+	background: red;
+}

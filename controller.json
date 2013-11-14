@@ -1,0 +1,5 @@
+{
+	"/": "home",
+	"/event/:id": "event",
+	"/:profile": "profile"	
+}

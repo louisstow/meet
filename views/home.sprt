@@ -1,0 +1,7 @@
+{{ include layout/header.sprt }}
+
+<table id="slots">
+
+</table>
+
+{{ include layout/footer.sprt }}
