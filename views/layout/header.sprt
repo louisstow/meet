@@ -10,6 +10,7 @@
 	<script src="/public/vendor/ui/js/slider.js"></script>
 
 	<script src="/public/vendor/Spineless.js"></script>
+	<script src="/public/vendor/date.js"></script>
 </head>
 <body>
 <h1>MeetME</h1>
