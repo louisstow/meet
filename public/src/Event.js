@@ -8,6 +8,8 @@ var daysHash = {
 	"Sun": 7
 };
 
+var eventHash = {};
+
 function formatDateRange (from, to) {
 	return from.toString("ddd d MMM h:mmtt") + " – " + to.toString("h:mmtt");
 }
@@ -80,6 +82,12 @@ var Meeting = Spineless.View.extend({
 					this.onInclude(profiles[i]);
 				}
 			})
+		}
+
+		if (window.localStorage) {
+			if (localStorage.events) {
+				eventHash = JSON.parse(localStorage.events);
+			}
 		}
 	},
 
@@ -219,6 +227,12 @@ var Meeting = Spineless.View.extend({
 		});
 
 		this.once("sync:post", function (resp) {
+			if (window.localStorage) {
+				eventHash[resp[0]._id] = 1;
+				console.log("SAVE")
+				localStorage['events'] = JSON.stringify(eventHash);
+			}
+
 			this.link.innerHTML = "Your unique link: <strong><a href='/event/" + resp[0]._id + "'>"+resp[0]._id+"</a></strong>"
 		});
 	}

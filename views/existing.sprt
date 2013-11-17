@@ -1,0 +1,13 @@
+{{ include layout/header.sprt }}
+
+<h2>Profiles</h2>
+<ul id="profiles">
+</ul>
+
+<h2>Events</h2>
+<ul id="events"></ul>
+
+<button class="big-button" id="clear-button">Clear Existing</button>
+
+{{ set page existing }}
+{{ include layout/footer.sprt }}

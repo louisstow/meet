@@ -22,5 +22,6 @@
 <ul>
 	<li><a href="/">Create a Timeslot Profile</a></li>
 	<li><a href="/event">Create an Event</a></li>
+	<li><a href="/existing">Existing Profiles or Events</a></li>
 </ul>
 </div>

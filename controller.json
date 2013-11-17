@@ -2,5 +2,6 @@
 	"/": "home",
 	"/event": "event",
 	"/event/:id": "event",
+	"/existing": "existing",
 	"/:profile": "home"	
 }

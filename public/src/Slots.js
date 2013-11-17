@@ -1,5 +1,6 @@
 var days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
+var namesHash = {};
 var Slots = Spineless.View.extend({
 	template: "slots",
 
@@ -26,8 +27,14 @@ var Slots = Spineless.View.extend({
 
 		this.on("duplicate", this.onDuplicate);
 
-		if (window.localStorage && localStorage.name) {
-			this.set("name", localStorage.name);
+		if (window.localStorage) {
+			if (localStorage.name) {
+				this.set("name", localStorage.name);
+			}
+
+			if (localStorage.profiles) {
+				namesHash = JSON.parse(localStorage.profiles);
+			}
 		}
 
 		var id = location.pathname.substr(1);
@@ -82,7 +89,13 @@ var Slots = Spineless.View.extend({
 
 		this.once("sync:post", function (resp) {
 			console.log("SYNC", arguments);
-			this.link.innerHTML = "Your unique link: <strong><a href='/" + resp[0]._id + "'>"+resp[0]._id+"</a></strong>"
+			
+			if (window.localStorage) {
+				namesHash[resp[0]._id] = resp[0].name;
+				localStorage['profiles'] = JSON.stringify(namesHash);
+			}
+
+			this.link.innerHTML = "Your unique link: <strong><a href='/" + resp[0]._id + "'>"+resp[0]._id+"</a></strong>";
 		})
 	},
 
