@@ -3,7 +3,7 @@ body, button {
 }
 
 #page {
-	width: 900px;
+	width: 780px;
 	margin: 20px auto;
 }
 
@@ -19,7 +19,7 @@ body, button {
 .preview {
 	float: left;
 	margin-left: 20px;
-	width: 250px;
+	width: 140px;
 }
 
 table {
@@ -38,7 +38,7 @@ td, th {
 }
 
 td.time {
-	width: 800px;
+	width: 695px;
 }
 
 .Time {
@@ -69,7 +69,7 @@ input {
 
 .comment {
 	clear: both;
-	width: 745px;
+	width: 635px;
 	margin-top: 5px;
 }
 
@@ -114,4 +114,25 @@ input {
 
 #link {
 	margin-left: 10px;
+}
+
+#nav ul {
+	margin: 10px 0 0 0;
+	padding: 5px 0;
+	border-bottom: 2px solid #3498db;
+}
+
+#nav li {
+	display: inline;
+	margin-right: 10px;
+}
+
+#nav li a {
+	color: #3498db;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#nav li a:hover {
+	color: #f6a828;
 }
