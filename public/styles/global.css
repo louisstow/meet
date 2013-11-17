@@ -74,10 +74,11 @@ input {
 }
 
 .clear {
+	margin: 0;
 	position: absolute;
 	right: 0;
-	top: -2px;
-	bottom: -2px;
+	top: 0;
+	bottom: 0;
 	background: #c0392b;
 	width: 30px;
 	border: 0;
