@@ -1,3 +1,4 @@
 {
-	"slots": {"type": "string"}
+	"slots": {"type": "string"},
+	"name": {"type": "string"}
 }

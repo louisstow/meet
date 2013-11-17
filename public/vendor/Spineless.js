@@ -28,8 +28,12 @@ var DETECT = {
 	ON_INPUT: (document.createElement("input").oninput === null)
 };
 
-//unique number #TODO: use this for something
-var UID = 0;
+//unique number
+var UID = 1;
+
+function getUID () {
+	return UID++;
+}
 
 //save reference to prototype methods
 var slice = Array.prototype.slice;
@@ -238,7 +242,7 @@ var View = Event.extend({
 		this.model = {};
 		this.form = [];
 
-		this.uid = "i" + (++UID);
+		this.uid = "i" + getUID();
 
 		//template exists in DOM, parse it
 		if (typeof this.template === "string") {
@@ -256,7 +260,7 @@ var View = Event.extend({
 		for (var item in this.defaults) {
 			if (item in opts) {
 				this.model[item] = opts[item];
-				delete opts[item];
+				//delete opts[item];
 			} else {
 				this.model[item] = this.defaults[item];
 			}
@@ -342,6 +346,12 @@ var View = Event.extend({
 
 	removeChild: function (child) {
 		child.removeFromParent();
+	},
+
+	removeChildren: function () {
+		while (this.children.length) {
+			this.children[0].removeFromParent();		
+		}
 	},
 
 	removeFromParent: function () {
@@ -557,6 +567,8 @@ var View = Event.extend({
 			}
 		}
 
+		var id = getUID();
+
 		var self = this;
 		Spineless.$.ajax({
 			type: method,
@@ -566,14 +578,18 @@ var View = Event.extend({
 
 			success: function (resp) {
 				self.emit("sync", resp);
+				self.emit("sync:" + id, resp);
 				self.emit("sync:" + method.toLowerCase(), resp);
 			},
 
 			error: function (resp) {
 				self.emit("error", resp);
+				self.emit("error:" + id, resp);
 				self.emit("error:" + method.toLowerCase(), resp);
 			}
 		});
+
+		return id;
 
 		console.log(method, url, JSON.stringify(data));
 	},

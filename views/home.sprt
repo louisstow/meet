@@ -3,6 +3,9 @@
 <p>Select some timeslots where you are free and optionally leave a comment.</p>
 
 <div id="slots">
+
+<input type="text" name="name" placeholder="Optional nickname" />
+
 <select name="timezone">
       <option value="-12.0">(GMT -12:00) Eniwetok, Kwajalein</option>
       <option value="-11.0">(GMT -11:00) Midway Island, Samoa</option>
@@ -40,7 +43,8 @@
 <table id="table">
 </table>
 
-<button id="save-button">Save</button>
+<button id="save-button" class="big-button">Save</button>
+<span id="link"></span>
 </div>
 
 {{ set page slots }}

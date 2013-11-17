@@ -15,19 +15,25 @@ var Row = Spineless.View.extend({
 	],
 
 	events: {
-		"click create": "onCreate"
+		"click create": "onCreate",
+		"click duplicate": "onDuplicate"
 	},
 
 	init: function () {
 		Row.super(this, "init", arguments);
-		console.log("WTF")
-		//this.addChild(new Time({superview: this.time}))
 	},
 
 	onCreate: function (e) {
 		this.addChild(
 			new Time({superview: $(e.target).siblings(".slots")[0]})
 		);
+	},
+
+	onDuplicate: function () {
+		// this.addChild(
+		// 	new Time({superview: $(e.target).siblings(".slots")[0]})
+		// );	
+		this.emit("duplicate", this.model.day);
 	},
 
 	save: function () {
@@ -38,6 +44,20 @@ var Row = Spineless.View.extend({
 		}
 
 		return template;
+	},
+
+	load: function (data) {
+		for (var i = 0; i < data.length; ++i) {
+			var d = data[i];
+			
+			var t = new Time({
+				superview: this.slots,
+				values: [d.startTime, d.endTime],
+				comment: d.comment
+			});
+
+			this.addChild(t);
+		}
 	},
 
 	render: function () {

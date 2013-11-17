@@ -11,6 +11,16 @@
 
 	<script src="/public/vendor/Spineless.js"></script>
 	<script src="/public/vendor/date.js"></script>
+
+	<title>Meeting Scheduler – Organise meetings across timezones</title>
 </head>
 <body>
-<h1>MeetME</h1>
+
+<div id="page">
+<h1>Meeting Scheduler</h1>
+<div id="nav">
+<ul>
+	<li><a href="/">Create a Timeslot Profile</a></li>
+	<li><a href="/event">Create an Event</a></li>
+</ul>
+</div>

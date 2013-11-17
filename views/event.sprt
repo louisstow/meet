@@ -1,23 +1,23 @@
 {{ include layout/header.sprt }}
 
 <div id="events">
-<p>Add the IDs of participants timeslots.</p>
-<input type="text" name="profile" /><button name="include-button">Include</button>
+<p>Add the IDs of participants to find the best overlapping times across timezones.</p>
+<input type="text" name="profile" placeholder="Profile ID..." />
+<button name="include-button" class="main-button">Invite Profile</button>
+<button name="crunch-button" class="main-button">Find the Best Time</button>
 
-<table id="table">
-</table>
+<h2>Participants</h2>
+<ul id="participants">
+
+</ul>
+
+<h2>Best Times</h2>
+<div id="results">
 </div>
 
-<div class="example">
-<table>
-	<tr>
-		<td rowspan="2">2 hour overlap</td>
-		<td>52856d3a6d90e8a15e000004</td><td>Tue Nov 12 9:00am</td><td>Best times</td>
-	</tr>
-	<tr>
-		<td>52856d3a6d90e8a15e000002</td><td>Mon Nov 11 3:00pm</td><td>Office hours</td>
-	</tr>
-</table>
+<button id="save-button" class="big-button">Save</button>
+<span id="link"></span>
+
 </div>
 
 {{ set page events }}

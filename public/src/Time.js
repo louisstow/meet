@@ -16,7 +16,7 @@ var Time = Spineless.View.extend({
 		"click clear": "removeFromParent"
 	},
 
-	init: function () {
+	init: function (opts) {
 		this.tag = "Time";
 		Time.super(this, "init", arguments);
 
@@ -25,11 +25,14 @@ var Time = Spineless.View.extend({
 			rangeDrag: true,
 			min: 0,
 			max: 48,
-			values: [18, 34],
+			values: opts.values || [18, 34],
 			slide: this.onSlide.bind(this)
 		});
 
-		this.onSlide(null, {values: [18, 34]});
+		this.onSlide(null, {values: opts.values || [18, 34]});
+		if (opts.comment) { 
+			this.set("comment", opts.comment);
+		}
 	},
 
 	onSlide: function (e, ui) {
